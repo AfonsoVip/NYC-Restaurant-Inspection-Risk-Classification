@@ -7,8 +7,8 @@ This project uses NYC restaurant inspection data to train a **Logistic Regressio
 
 ### 1. Clone & environment
 ```bash
-git clone <your-repo-url>.git
-cd <repo>
+git clone https://github.com/AfonsoVip/NYC-Restaurant-Inspection-Risk-Classification.git
+cd NYC-Restaurant-Inspection-Risk-Classification
 
 # create environment
 conda create -n nyc-risk python=3.10 -y
@@ -50,18 +50,8 @@ jupyter lab
 ```bash
 papermill notebooks/nyc_inspection_model.ipynb \
           outputs/nyc_inspection_model_run.ipynb \
-          -p test_size 0.2 \
-          -p random_state 42
 
 ```
-
-## Parameters
-| Name          | Values        | Description             |
-|---------------|---------------|-------------------------|
-| `test_size`   | 0.2           | Holdout fraction        |
-| `random_state`| 42            | Seed                    |
-| `C`           | [0.1, 1, 10]  | Regularization grid     |
-| `max_iter`    | [1000, 2000]  | Solver iterations       |
 
 ## Outputs
 - **Classification report** (precision/recall/F1)  
