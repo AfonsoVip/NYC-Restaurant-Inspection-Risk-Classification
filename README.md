@@ -48,7 +48,11 @@ jupyter lab
 
 ### Headless execution
 ```bash
-papermill notebooks/nyc_inspection_model.ipynb           outputs/nyc_inspection_model_run.ipynb           -p test_size 0.2           -p random_state 42
+papermill notebooks/nyc_inspection_model.ipynb \
+          outputs/nyc_inspection_model_run.ipynb \
+          -p test_size 0.2 \
+          -p random_state 42
+
 ```
 
 ## Parameters
