@@ -8,11 +8,19 @@ This project uses NYC restaurant inspection data to train a **Logistic Regressio
 ### 1. Clone & environment
 ```bash
 git clone https://github.com/AfonsoVip/NYC-Restaurant-Inspection-Risk-Classification.git
+
 cd NYC-Restaurant-Inspection-Risk-Classification
 
-# create environment
-conda create -n nyc-risk python=3.10 -y
-conda activate nyc-risk
+# create environment, using python 3.9.6 for this build
+
+# First install it through pyenv environment.
+pyenv install 3.9.6
+
+# Create environment with python version just downloaded and with structured naming
+pyenv virtualenv 3.9.6 nyc-risk
+
+# Activate created env
+pyenv activate nyc-risk    
 
 # install dependencies
 pip install -r requirements.txt
@@ -20,14 +28,16 @@ pip install -r requirements.txt
 
 ### requirements.txt
 ```
-pandas
-numpy
-matplotlib
-seaborn
-plotly
-scikit-learn
-jupyter
-papermill
+pandas==2.3.2
+numpy==2.0.2
+matplotlib==3.9.4
+seaborn==0.13.2
+plotly==6.3.0
+scikit-learn==1.6.1
+jupyterlab==4.2.5
+notebook==7.2.2
+ipykernel==6.30.1
+papermill==2.5.0
 ```
 
 ## Data
@@ -35,7 +45,6 @@ Place inspection data in `data/raw/`:
 ```
 data/raw/inspections.csv
 ```
-Adjust the file path in the notebook if your data is stored elsewhere.
 
 ## Running
 
@@ -52,12 +61,6 @@ papermill notebooks/nyc_inspection_model.ipynb \
           outputs/nyc_inspection_model_run.ipynb \
 
 ```
-
-## Outputs
-- **Classification report** (precision/recall/F1)  
-- **Confusion matrix** (PNG, saved under `outputs/figures/`)  
-- **High Risk distribution by borough**  
-- **Top violation codes** (table/plot)  
 
 ## License
 MIT
